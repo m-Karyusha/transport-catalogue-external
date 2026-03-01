@@ -3,6 +3,7 @@
 #include "ranges.h"
 
 #include <cstdlib>
+#include <string>
 #include <vector>
 
 namespace graph {
