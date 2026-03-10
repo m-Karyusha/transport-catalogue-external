@@ -99,6 +99,9 @@ struct RenderSettings {
     svg::Color underlayer_color;
     double underlayer_width = 0;
     std::vector<svg::Color> color_palette;
+
+    // Новое:
+    svg::Color stop_color;
 };
 
 struct RouteInfoBegEnd {

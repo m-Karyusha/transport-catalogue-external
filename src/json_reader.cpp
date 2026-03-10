@@ -387,6 +387,20 @@ void JsonReader::ParseRenderSettings() {
                 }
             }
         }
+        else if (name == "stop_color") {
+            if (set.IsString()) {
+                settings.stop_color = set.AsString();
+            } else if (set.IsArray()) {
+                const auto& array = set.AsArray();
+                if (array.size() == 3) {
+                    svg::Rgb color(array[0].AsInt(), array[1].AsInt(), array[2].AsInt());
+                    settings.stop_color = color;
+                } else {
+                    svg::Rgba color(array[0].AsInt(), array[1].AsInt(), array[2].AsInt(), array[3].AsDouble());
+                    settings.stop_color = color;
+                }
+            }
+        }
     }
 
     routes_for_paint_.SetRenderSetting(settings);

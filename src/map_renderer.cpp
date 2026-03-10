@@ -124,7 +124,7 @@ void PaintDataRoutes::RenderStop(const SphereProjector& proj) {
 
         circle.SetCenter(coord).
             SetRadius(set_.stop_radius).
-            SetFillColor("white");
+            SetFillColor(set_.stop_color);
 
         render_doc_.AddPtr(std::make_unique<svg::Circle>(circle));
     }
